@@ -23,4 +23,11 @@ describe('Zoo', () => {
     expect(zoo.getAllAnimals()).not.toContainEqual(animal1);
     expect(zoo.getAllAnimals()).toContainEqual(animal2);
   });
+
+  test('should get animal by name', () => {
+    const animal = new Animal('Leo', 'Lion', 5);
+    zoo.addAnimal(animal);
+    const foundAnimal = zoo.getAnimal('Leo');
+    expect(foundAnimal).toEqual(animal);
+  });
 });
