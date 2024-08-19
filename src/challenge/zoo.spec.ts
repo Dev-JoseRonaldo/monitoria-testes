@@ -57,4 +57,15 @@ describe('Zoo', () => {
     const lions = zoo.getAnimalsBySpecies('Lion');
     expect(lions).toEqual([animal1, animal3]);
   });
+
+  test('should get average age of animals', () => {
+    const animal1 = new Animal('Leo', 'Lion', 5);
+    const animal2 = new Animal('Peçanha', 'Snake', 1);
+    const animal3 = new Animal('Lince', 'Lion', 3);
+    zoo.addAnimal(animal1);
+    zoo.addAnimal(animal2);
+    zoo.addAnimal(animal3);
+    const averageAge = zoo.getAverageAge();
+    expect(averageAge).toBe(3);
+  });
 });
