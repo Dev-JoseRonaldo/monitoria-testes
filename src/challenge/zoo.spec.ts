@@ -68,4 +68,9 @@ describe('Zoo', () => {
     const averageAge = zoo.getAverageAge();
     expect(averageAge).toBe(3);
   });
+
+  test('should return average age zero if no animals are present', () => {
+    const averageAge = zoo.getAverageAge();
+    expect(averageAge).toBe(0);
+  });
 });
