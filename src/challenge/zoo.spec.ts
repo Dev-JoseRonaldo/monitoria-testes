@@ -30,4 +30,11 @@ describe('Zoo', () => {
     const foundAnimal = zoo.getAnimal('Leo');
     expect(foundAnimal).toEqual(animal);
   });
+
+  test('should return undefined if animal is not found', () => {
+    const animal = new Animal('Leo', 'Lion', 5);
+    zoo.addAnimal(animal);
+    const foundAnimal = zoo.getAnimal('Zebra');
+    expect(foundAnimal).toBeUndefined();
+  });
 });
